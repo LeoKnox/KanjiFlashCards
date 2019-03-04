@@ -25,5 +25,5 @@
 /Users/Aelien/Documents/work/FlashCard/obj/Debug/netcoreapp2.1/FlashCard.pdb
 /Users/Aelien/Documents/work/FlashCard/obj/Debug/netcoreapp2.1/FlashCard.csproj.CopyComplete
 /Users/Aelien/Documents/work/FlashCard/obj/Debug/netcoreapp2.1/Razor/Views/Home/Body.cshtml.g.cs
-/Users/Aelien/Documents/work/FlashCard/obj/Debug/netcoreapp2.1/Razor/Views/Home/Change.cshtml.g.cs
 /Users/Aelien/Documents/work/FlashCard/obj/Debug/netcoreapp2.1/Razor/Views/Home/Populate.cshtml.g.cs
+/Users/Aelien/Documents/work/FlashCard/obj/Debug/netcoreapp2.1/Razor/Views/Home/Kanji.cshtml.g.cs

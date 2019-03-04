@@ -1,5 +1,9 @@
-﻿<h2>Index View</h2>
+﻿<h2>KANJI FLASHCARDS</h2>
 <p>Get to building things!</p>
 <a href="/change"><button>Show Kanji</button></a>
-<a href="/"><button>Show Word</button></a>
-<partial name="@ViewBag.Partial" />
+<a href="/word"><button>Show Word</button></a>
+<a href="/tonew"><button>New Kanji</button></a>
+@if (ViewBag.Partial !=  null)
+{
+    <partial name="@ViewBag.Partial" />
+}
