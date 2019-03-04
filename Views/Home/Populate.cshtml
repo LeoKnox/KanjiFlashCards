@@ -1,0 +1,18 @@
+@model Kanji
+
+<h2>Add New Kanji</h2>
+<form asp-action="Insert" asp-controller="Home" method="post">
+    <span asp-validation-for="DisplayWord"></span>
+    <label asp-for="DisplayWord"></label>
+    <input asp-for="DisplayWord"><br>
+    <span asp-validation-for="DisplayKanji"></span>
+    <label asp-for="DisplayKanji"></label>
+    <input asp-for="DisplayKanji"><br>
+    <span asp-validation-for="PronounceKanji"></span>
+    <label asp-for="PronounceKanji"></label>
+    <input asp-for="PronounceKanji"><br>
+    <span asp-validation-for="Kana"></span>
+    <label asp-for="Kana"></label>
+    <input asp-for="Kana"><br>
+    <button>Submit</button>
+</form>
