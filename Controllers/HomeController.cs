@@ -29,8 +29,10 @@ namespace FlashCard.Controllers
         public IActionResult tonew()
         {
             List<Kanji> KanjiList = dbContext.Kanjis.ToList();
-            HttpContext.Session.SetString("Kanji", KanjiList[1].DisplayKanji);
-            HttpContext.Session.SetString("Word", KanjiList[1].DisplayWord);
+            Random rnd = new Random();
+            int x = rnd.Next(0, KanjiList.Count);
+            HttpContext.Session.SetString("Kanji", KanjiList[x].DisplayKanji);
+            HttpContext.Session.SetString("Word", KanjiList[x].DisplayWord);
             ViewBag.Partial = "Kanji";
             ViewBag.Kanji = HttpContext.Session.GetString("Kanji");
             return View("Index");
