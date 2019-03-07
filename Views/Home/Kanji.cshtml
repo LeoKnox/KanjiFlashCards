@@ -1,1 +1,26 @@
 <h1>@Html.Raw(@ViewBag.Kanji)</h1>
+<style>
+div {
+  width: 200px;
+  height: 100px;
+  border: 1px solid black;
+}
+</style>
+
+<!-- <div onmousemove="myFunction(event)" onmouseout="clearCoor()"></div> -->
+<div onmousedown="myFunction(event)" onmouseup="clearCoor()"></div>
+
+<p id="demo"></p>
+
+<script>
+function myFunction(e) {
+  var x = e.clientX;
+  var y = e.clientY;
+  var coor = "Coordinates: (" + x + "," + y + ")";
+  document.getElementById("demo").innerHTML = coor;
+}
+
+function clearCoor() {
+  document.getElementById("demo").innerHTML = "";
+}
+</script>
