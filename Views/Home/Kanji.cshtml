@@ -7,8 +7,8 @@ div {
 }
 </style>
 
-<!-- <div onmousemove="myFunction(event)" onmouseout="clearCoor()"></div> -->
-<div onmousedown="myFunction(event)" onmouseup="clearCoor()"></div>
+<div onmousemove="mm(event)" onmouseout="clearCoor()"></div>
+<!-- <div onmousedown="myFunction(event)" onmouseup="clearCoor()"></div> -->
 
 <p id="demo"></p>
 
@@ -18,6 +18,13 @@ function myFunction(e) {
   var y = e.clientY;
   var coor = "Coordinates: (" + x + "," + y + ")";
   document.getElementById("demo").innerHTML = coor;
+}
+
+function mm(e) {
+    var x = e.clientX;
+    var y = e.clientY;
+    myFunction(e);
+    document.getElementById("demo").innerHTML = "Coordinates: " + x + "," + y;
 }
 
 function clearCoor() {
