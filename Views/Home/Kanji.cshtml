@@ -7,8 +7,8 @@ div {
 }
 </style>
 
-<div onmousemove="mm(event)" onmouseout="clearCoor()"></div>
-<!-- <div onmousedown="myFunction(event)" onmouseup="clearCoor()"></div> -->
+<!-- <div onmousemove="mm(event)" onmouseout="clearCoor()"></div> -->
+<div onmousedown="myFunction(event)" onmouseup="clearCoor()"></div>
 
 <p id="demo"></p>
 
@@ -17,6 +17,7 @@ function myFunction(e) {
   var x = e.clientX;
   var y = e.clientY;
   var coor = "Coordinates: (" + x + "," + y + ")";
+  document.addEventListener("mousemove", mm);
   document.getElementById("demo").innerHTML = coor;
 }
 
@@ -28,6 +29,7 @@ function mm(e) {
 }
 
 function clearCoor() {
-  document.getElementById("demo").innerHTML = "";
+  //document.getElementById("demo").innerHTML = "";
+  document.removeEventListener('mousemove', mm);
 }
 </script>
