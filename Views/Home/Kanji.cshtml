@@ -6,8 +6,8 @@ div {
   border: 1px solid black;
 }
 </style>
-<svg height="100" width="200" id="svg">
-  <polyline points="1,2 151,251" style="fill:none;stroke:#000;stroke-width:3" />
+<svg height="100" width="200" id="draw">
+  <polyline id="pi" points="" style="fill:none;stroke:#000;stroke-width:3" />
 </svg>
 
 <!-- <div onmousemove="mm(event)" onmouseout="clearCoor()"></div> -->
@@ -27,8 +27,15 @@ function myFunction(e) {
 function mm(e) {
     var x = e.clientX;
     var y = e.clientY;
+    var svg = document.getElementById('draw');
+    var point = svg.createSVGPoint();
     myFunction(e);
     document.getElementById("demo").innerHTML = "Coordinates: " + x + "," + y;
+    point.x += (x-220);
+    point.y += (y-320);
+    console.log(point);
+    var polyline = document.getElementById('pi');
+    polyline.points.appendItem(point);
 }
 
 function clearCoor() {
