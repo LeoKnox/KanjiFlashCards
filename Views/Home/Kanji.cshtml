@@ -1,17 +1,24 @@
 <h1>@Html.Raw(@ViewBag.Kanji)</h1>
 <style>
-div {
-  width: 200px;
-  height: 100px;
+h1 {
+  font-size: 8em;
+  margin: 20px;
+}
+
+#tablet {
+  width: 150px;
+  height: 150px;
   border: 1px solid black;
 }
 </style>
-<svg height="100" width="200" id="draw">
+<div id="tablet" onmousedown="myFunction(event)" onmouseup="clearCoor()">
+<svg height="150" width="150" id="draw">
   <polyline id="pi" points="" style="fill:none;stroke:#000;stroke-width:3" />
 </svg>
+</div>
 
-<!-- <div onmousemove="mm(event)" onmouseout="clearCoor()"></div> -->
-<div onmousedown="myFunction(event)" onmouseup="clearCoor()"></div>
+<!-- <div onmousemove="mm(event)" onmouseout="clearCoor()"></div>
+<div onmousedown="myFunction(event)" onmouseup="clearCoor()"></div> -->
 
 <p id="demo"></p>
 
@@ -23,7 +30,6 @@ function myFunction(e) {
   document.addEventListener("mousemove", mm);
   document.getElementById("demo").innerHTML = coor;
 }
-
 function mm(e) {
     var x = e.clientX;
     var y = e.clientY;
@@ -31,15 +37,17 @@ function mm(e) {
     var point = svg.createSVGPoint();
     myFunction(e);
     document.getElementById("demo").innerHTML = "Coordinates: " + x + "," + y;
-    point.x += (x-220);
-    point.y += (y-320);
+    point.x += (x-194);
+    point.y += (y-332);
     console.log(point);
     var polyline = document.getElementById('pi');
     polyline.points.appendItem(point);
 }
-
 function clearCoor() {
   //document.getElementById("demo").innerHTML = "";
+  console.log('mouse up!');
+  document.getElementById('pi').id="";
+  document.getElementById('draw').innerHTML += '<polyline id="pi" points="" style="fill:none;stroke:#000;stroke-width:3" />';
   document.removeEventListener('mousemove', mm);
 }
 </script>

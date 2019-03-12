@@ -33,8 +33,9 @@ namespace FlashCard.Controllers
             int x = rnd.Next(0, KanjiList.Count);
             HttpContext.Session.SetString("Kanji", KanjiList[x].DisplayKanji);
             HttpContext.Session.SetString("Word", KanjiList[x].DisplayWord);
+            HttpContext.Session.SetString("Kana", KanjiList[x].Kana);
             ViewBag.Partial = "Kanji";
-            ViewBag.Kanji = HttpContext.Session.GetString("Kanji");
+            ViewBag.Kanji = HttpContext.Session.GetString("Kana");
             return View("Index");
         }
 
