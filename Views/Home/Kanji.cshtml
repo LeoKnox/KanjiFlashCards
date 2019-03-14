@@ -13,7 +13,7 @@ h1 {
 </style>
 <div id="tablet" onmousedown="myFunction(event)" onmouseup="clearCoor()">
 <svg height="150" width="150" id="draw">
-  <polyline id="pi" points="" style="fill:none;stroke:#000;stroke-width:3" />
+  <polyline id="pi" points="" style="fill:none;stroke:#000;stroke-width:6" />
 </svg>
 </div>
 
@@ -47,7 +47,7 @@ function clearCoor() {
   //document.getElementById("demo").innerHTML = "";
   console.log('mouse up!');
   document.getElementById('pi').id="";
-  document.getElementById('draw').innerHTML += '<polyline id="pi" points="" style="fill:none;stroke:#000;stroke-width:3" />';
+  document.getElementById('draw').innerHTML += '<polyline id="pi" points="" style="fill:none;stroke:#000;stroke-width:6" />';
   document.removeEventListener('mousemove', mm);
 }
 </script>
